@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoGastos.Vista.IngresarAct"
+             BackgroundColor="Gray"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout>
+        <Grid>
+            <Image Source="https://i.ibb.co/qxx31mz/volver.png" HeightRequest="20"
+                   Grid.Column="0" Grid.Row="0" Margin="-100,10,20,-0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding VolverCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Ingresar" FontSize="40" HorizontalOptions="Center" TextColor="Black"
+                   Grid.Column="1" Grid.Row="0" Margin="-190,0,0,0"/>
+        </Grid>
+        <Entry Text="{Binding Aux}" HorizontalOptions="Center" Placeholder="0.00$" Margin="0,270,0,0"
+               FontSize="50" Keyboard="Numeric"/>
+        <Button Text="Ingresar" Margin="10,300,10,0" FontSize="30" HorizontalOptions="FillAndExpand"
+                Command="{Binding IngresarAuxCommand}"/>
+    </StackLayout>
+</ContentPage>

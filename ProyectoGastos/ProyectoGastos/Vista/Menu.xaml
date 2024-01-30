@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoGastos.Vista.Menu"
+             BackgroundColor="Gray"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout>
+        <Label FontSize="40" HorizontalOptions="Center" Text="Registro de gastos" TextColor="Black"/>
+        <Grid>
+            <Image Source="https://i.ibb.co/DWq1M5X/ingresar.png" HeightRequest="50"
+                   Grid.Column="0" Grid.Row="1">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding IringresoactCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="INGRESAR" TextColor="Black" FontSize="17"
+                   Grid.Column="0" Grid.Row="2" Margin="25,0,0,0"/>
+            <Image Source="https://i.ibb.co/b1mPMJd/retirar.png" HeightRequest="50"
+                   Grid.Column="1" Grid.Row="1">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding IrretirarCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="RETIRAR" TextColor="Black" FontSize="17"
+                   Grid.Column="1" Grid.Row="2" Margin="30,0,0,0"/>
+            <Image Source="https://i.ibb.co/McJ18p8/presupuesto.png" HeightRequest="50"
+                   Grid.Column="2" Grid.Row="1" Margin="0,0,30,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding IrpresupuestoCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="ESTABLECER PRESUPUESTO" TextColor="Black" FontSize="17"
+                   Grid.Column="2" Grid.Row="2"/>
+        </Grid>
+        <Label Text="Saldo" TextColor="Black" FontSize="30"
+               HorizontalOptions="Center"/>
+        <Label Text="{Binding Saldo}" TextColor="Green" FontSize="30"
+               HorizontalOptions="Center"/>
+        
+            <Label Text="Presupuesto" TextColor="Black" FontSize="25"/>
+        <Grid>
+            <Label Text="Usado" TextColor="Black" FontSize="20"
+                   Grid.Column="1" Grid.Row="0" Margin="-20,20,0,0"/>
+            <Label Text="{Binding Saldo}" TextColor="Green" FontSize="25"
+                   Grid.Column="1" Grid.Row="1" Margin="-20,0,0,0"/>
+            <Label Text="/" TextColor="Black" FontSize="25"
+                   Grid.Column="2" Grid.Row="1" Margin="-10,0,0,0"/>
+            <Label Text="Limite" TextColor="Black" FontSize="20"
+                   Grid.Column="3" Grid.Row="0" Margin="-48,20,0,0"/>
+            <Label Text="{Binding Presupuesto}" TextColor="Black" FontSize="25"
+                   Grid.Column="3" Grid.Row="1" Margin="-50,0,0,0"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
